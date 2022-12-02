@@ -1,4 +1,5 @@
-﻿using Azure;
+﻿using AutoMapper.Configuration.Conventions;
+using Azure;
 using Mango.Service.ProductAPI.Models;
 using Mango.Service.ProductAPI.Models.Dto;
 using Mango.Service.ProductAPI.Repository;
@@ -48,6 +49,69 @@ namespace Mango.Service.ProductAPI.Controllers
             {
                 ProductDto productDto = await _productRepository.GetProductById(id);
                 _response.Result = productDto;
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Success = false;
+                _response.ErrorsMessage = new List<string> { ex.ToString() };
+
+            }
+            return _response;
+
+        }
+        [HttpPost]
+        
+        public async Task<object> Post([FromBody]ProductDto productDto)
+        {
+            try
+            {
+                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
+                
+                _response.Result = productDto;
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Success = false;
+                _response.ErrorsMessage = new List<string> { ex.ToString() };
+
+            }
+            return _response;
+
+        }
+        [HttpPut]
+
+        public async Task<object> Put([FromBody] ProductDto productDto)
+        {
+            try
+            {
+                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
+
+                _response.Result = productDto;
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Success = false;
+                _response.ErrorsMessage = new List<string> { ex.ToString() };
+
+            }
+            return _response;
+
+        }
+        [HttpDelete]
+
+        public async Task<object> Delete(int productId )
+        {
+            try
+            {
+                bool isSuccess = await _productRepository.DeleteProduct(productId);
+
+                _response.Result = isSuccess;
 
 
             }
