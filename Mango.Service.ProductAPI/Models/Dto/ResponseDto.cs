@@ -1,6 +1,6 @@
 ﻿namespace Mango.Service.ProductAPI.Models.Dto
 {
-    public class Response
+    public class ResponseDto
     {
         public bool Success { get; set; } = true;
         public object Result { get; set; }
