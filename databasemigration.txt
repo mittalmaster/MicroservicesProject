@@ -47,3 +47,19 @@ ctor tabtab for constructor
 The await operator suspends evaluation of the enclosing async method until the asynchronous 
 operation represented by its operand completes
 
+
+To Add data to database 
+add-migration SeedProducts
+update-database
+
+
+
+
+IDisposable ?
+
+
+
+IServiceBase 
+It is used to remove redunt code of calling api's 
+
+
