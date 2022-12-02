@@ -3,3 +3,10 @@
 ################################################################################
 
 /Mango.web/bin/Debug/net6.0
+/Mango.Service.ProductAPI/bin/Debug/net6.0
+/Mango.web/obj
+/Mango.Service.ProductAPI/obj/Debug/net6.0
+/Mango.Service.ProductAPI/obj/Mango.Service.ProductAPI.csproj.nuget.dgspec.json
+/Mango.Service.ProductAPI/obj
+/Mango.web/wwwroot
+/.vs
