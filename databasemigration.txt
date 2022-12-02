@@ -1,0 +1,45 @@
+for model to database 
+1. startup project must be the model of which project
+we want 
+2. deafult project in the console must be the your project 
+3. command 
+add-migration meaningfullname
+
+to push these changes to database 
+4. update database 
+Configure Services 
+It basically tell the applicatio about the services which we are using in our applications 
+
+
+what is DTOs?
+What is automapper ?
+
+DTOS
+Problems without DTOs
+Decouple client from internal implementation (as it may directky hit the database)
+Hide propertites that clients are not supposed to view (internal property should not be visible)
+Avoid "over-posting "vulnerbilities (client shlould not send any useless data to our database)
+
+
+problem can we solve as adding extra service layer that is
+DTOs 
+Controller will take DTOs as input and output as DTOs
+
+basically DTO holds the property that must be visible 
+publically 
+
+
+
+Automapper
+Means we are mappinf DTOs to internal main object that bind to database 
+services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+
+inject in conteoller construtor 
+construtor(IMapper mapper)
+mapper.map<destination >(source); to map
+
+
+
+Task ??
+ctor tabtab for constructor
+
