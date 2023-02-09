@@ -28,77 +28,62 @@ namespace Mango.Service.ProductAPI.Controllers
             {
                 IEnumerable<ProductDto> productDto = await _productRepository.GetProducts();
                 _response.Result = productDto;
-
-
             }
             catch (Exception ex)
             {
                 _response.Success = false;
                 _response.ErrorsMessage = new List<string> { ex.ToString() };
-
             }
             return _response;
-
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("{id}")] // to differentiate from above get method it will take id 
         public async Task<object> Get(int id)
         {
             try
             {
                 ProductDto productDto = await _productRepository.GetProductById(id);
                 _response.Result = productDto;
-
-
             }
             catch (Exception ex)
             {
                 _response.Success = false;
                 _response.ErrorsMessage = new List<string> { ex.ToString() };
-
             }
             return _response;
 
         }
-        [HttpPost]
+        [HttpPost]//this is used to create new record 
         
         public async Task<object> Post([FromBody]ProductDto productDto)
         {
             try
             {
-                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
-                
+                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);                
                 _response.Result = productDto;
-
-
             }
             catch (Exception ex)
             {
                 _response.Success = false;
                 _response.ErrorsMessage = new List<string> { ex.ToString() };
-
             }
             return _response;
 
         }
-        [HttpPut]
+        [HttpPut]//put is used for update an existing record 
 
         public async Task<object> Put([FromBody] ProductDto productDto)
         {
             try
             {
                 ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
-
                 _response.Result = productDto;
-
-
             }
             catch (Exception ex)
             {
                 _response.Success = false;
                 _response.ErrorsMessage = new List<string> { ex.ToString() };
-
             }
             return _response;
 
@@ -110,10 +95,7 @@ namespace Mango.Service.ProductAPI.Controllers
             try
             {
                 bool isSuccess = await _productRepository.DeleteProduct(productId);
-
                 _response.Result = isSuccess;
-
-
             }
             catch (Exception ex)
             {

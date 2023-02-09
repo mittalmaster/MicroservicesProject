@@ -3,12 +3,13 @@ for model to database
 we want 
 2. deafult project in the console must be the your project 
 3. command 
+
 add-migration meaningfullname
 
 to push these changes to database 
 4. update database 
 Configure Services 
-It basically tell the applicatio about the services which we are using in our applications 
+It basically tell the application about the services which we are using in our applications 
 
 
 what is DTOs?
@@ -31,7 +32,7 @@ publically
 
 
 Automapper
-Means we are mappinf DTOs to internal main object that bind to database 
+Means we are mapping DTOs to internal main object that bind to database 
 services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
 inject in conteoller construtor 
